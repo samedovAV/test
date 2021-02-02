@@ -2,19 +2,18 @@ package com.example.test;
 
 import org.springframework.stereotype.Component;
 
-import javax.annotation.PostConstruct;
 
 @Component
 public class BeanA {
 
-    private BeanB beanB;
+    private final BeanB beanB;
 
-    public void setBeanB(BeanB beanB) {
+    public BeanA(BeanB beanB) {
         this.beanB = beanB;
     }
 
-    @PostConstruct
-    public void init() {
-        this.beanB.doSomething(beanB);
+    public String returnString(String name) {
+        beanB.setName(name);
+        return "Hello " + beanB.getName();
     }
 }

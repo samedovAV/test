@@ -1,5 +1,8 @@
 package com.example.test;
 
+import org.springframework.stereotype.Component;
+
+@Component
 public class BeanB {
 
     private Long id;
@@ -21,7 +24,4 @@ public class BeanB {
         this.name = name;
     }
 
-    public void doSomething(BeanB beanB) {
-        beanB.name = "new Name";
-    }
 }

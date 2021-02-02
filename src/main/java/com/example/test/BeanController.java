@@ -1,19 +1,23 @@
 package com.example.test;
 
-import lombok.RequiredArgsConstructor;
 import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RestController;
 
-import java.util.List;
-
 @RestController
-@RequiredArgsConstructor
 public class BeanController {
 
-    private final BeanService beanService;
+    private final BeanA beanA;
 
-    @GetMapping(value = "/get")
-    public List<BeanB> getAllBeans() {
-        return beanService.getAllBeans();
+    public BeanController(BeanA beanA) {
+        this.beanA = beanA;
     }
+
+    // Реализация через путь
+    @GetMapping(value = "/get/{name}")
+    public String call(@PathVariable String name) {
+        return beanA.returnString(name);
+    }
+
+    // Реализация через знак вопроса (параметр)
 }
