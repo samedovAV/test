@@ -1,5 +1,5 @@
-#Тестирование через ab с syncronized и без
-##1 поток без syncronized
+# Тестирование через ab с syncronized и без  
+## 1 поток без syncronized
 samedov@samedov-mi-pro:~$ ab -n 10000 -c 1 http://localhost:8080/get/vasya
 
 Server Software:          
@@ -38,7 +38,7 @@ Percentage of the requests served within a certain time (ms)
   99%      1  
  100%    103 (longest request)  
 
-##16 потоков без syncronized
+## 16 потоков без syncronized
 
 samedov@samedov-mi-pro:~$ ab -n 10000 -c 16 http://localhost:8080/get/vasya
 
@@ -78,7 +78,7 @@ Percentage of the requests served within a certain time (ms)
   99%      8  
  100%    135 (longest request)  
 
-##32 потока без syncronized
+## 32 потока без syncronized
 
 samedov@samedov-mi-pro:~$ ab -n 10000 -c 32 http://localhost:8080/get/vasya
 
@@ -118,7 +118,7 @@ Percentage of the requests served within a certain time (ms)
   99%     16  
  100%     95 (longest request)  
 
-##16 потоков syncronized
+## 16 потоков syncronized
 
 samedov@samedov-mi-pro:~$ ab -n 10000 -c 16 http://localhost:8080/get/vasya
 
@@ -158,7 +158,7 @@ Percentage of the requests served within a certain time (ms)
   99%      8  
  100%    122 (longest request)  
 
-##32 потока synchronized
+## 32 потока synchronized
 
 samedov@samedov-mi-pro:~$ ab -n 10000 -c 32 http://localhost:8080/get/vasya
 
