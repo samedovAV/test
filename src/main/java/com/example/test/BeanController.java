@@ -1,9 +1,6 @@
 package com.example.test;
 
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.PathVariable;
-import org.springframework.web.bind.annotation.RequestParam;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.*;
 
 @RestController
 public class BeanController {
@@ -26,4 +23,10 @@ public class BeanController {
         return beanA.returnString(name);
     }
 
+    // Отправить параметр через POST
+    // curl -X POST http://localhost:8080/send-name/vasya
+    @PostMapping(value = "/send-name/{name}")
+    public String sendAndCall(@PathVariable String name) {
+        return beanA.returnString(name);
+    }
 }

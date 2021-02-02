@@ -2,7 +2,6 @@ package com.example.test;
 
 import org.springframework.stereotype.Component;
 
-
 @Component
 public class BeanA {
 
@@ -13,7 +12,6 @@ public class BeanA {
     }
 
     public String returnString(String name) {
-        beanB.setName(name);
-        return "Hello " + beanB.getName();
+        return beanB.printGreeting(name);
     }
 }
